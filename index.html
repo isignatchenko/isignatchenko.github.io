@@ -10,6 +10,10 @@
   <h1>Пример WebApp для Telegram</h1>
   <button onclick="sendMessageToBot()">Отправить сообщение в Telegram</button>
 
+  Telegram.WebApp.MainButton
+        .setText('CLOSE WEBVIEW')
+        .show()
+
   <script>
     function sendMessageToBot() {
       Telegram.WebApp.onEvent('mainButtonClicked', function() {
@@ -17,9 +21,6 @@
         Telegram.WebApp.webviewClose()
       });
     }
-    Telegram.WebApp.MainButton
-        .setText('CLOSE WEBVIEW')
-        .show()
   </script>
 </body>
 </html>
