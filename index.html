@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram WebApp</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram WebApp</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <h1>WebApp Interaction Example</h1>
-    <button id="sendBtn">Send Message to Bot</button>
-
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-      document.getElementById("sendBtn").addEventListener("click", function() {
-        // Подготавливаем данные для отправки
-        const data = JSON.stringify({
-          message: "Hello from WebApp!",
-          hiddenData: "temp_1"
-        });
-
-        // Отправляем данные обратно в бота
-        Telegram.WebApp.sendData(data);
+  <h1>Пример WebApp для Telegram</h1>
+  <button onclick="sendMessageToBot()">Отправить сообщение в Telegram</button>
+  
+  <script>
+    function sendMessageToBot() {
+      Telegram.WebApp.onEvent('mainButtonClicked', function() {
+        Telegram.WebApp.sendData('Здесь произвольные данные от WebApp');
       });
-    </script>
+    }
+  </script>
 </body>
 </html>
