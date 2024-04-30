@@ -14,9 +14,6 @@ let btn4 = document.getElementById("btn4");
 let btn5 = document.getElementById("btn5");
 let btn6 = document.getElementById("btn6");
 
-let init_data = tg.initData;
-let init_data_unsafe = tg.initDataUnsafe;
-
 btn1.addEventListener("click", function(){
 	if (tg.MainButton.isVisible) {
 		tg.MainButton.hide();
@@ -98,8 +95,8 @@ p.innerText = `${tg.initDataUnsafe.user.first_name}
 ${tg.initDataUnsafe.user.last_name}
 ${tg.initDataUnsafe.user.is_premium}
 ${tg.initDataUnsafe.query_id}
-${init_data}
-${init_data_unsafe}`;
+${tg.initData}
+${tg.initDataUnsafe}`;
 
 usercard.appendChild(p);
 
